@@ -1,4 +1,5 @@
 package datastructures
+
 // Stack trait: defines basic operations for a stack
 trait StackTrait[T] {
   def push(item: T): Unit
@@ -10,7 +11,7 @@ trait StackTrait[T] {
 /// Array-based stack implementation with a fixed capacity.
 /// Allows pushing and popping elements in constant time, with a stack overflow if full.
 /// Example usage:
-/// val stack = new ArrayStack(5)
+/// val stack = new ArrayStack[Int](5)
 /// stack.push(1)   // Stack: [1]
 /// stack.push(2)   // Stack: [1, 2]
 /// stack.pop()     // Returns Some(2), Stack: [1]
@@ -49,9 +50,6 @@ class ArrayStack[T](capacity: Int) extends StackTrait[T] {
   // Check if the stack is empty
   def isEmpty: Boolean = top == -1
 }
-
-// Define the Node class for the linked list
-class Node[T](val value: T, var next: Option[Node[T]] = None)
 
 /// Linked list-based stack implementation with dynamic sizing (no capacity limits).
 /// Supports pushing and popping elements in constant time.
