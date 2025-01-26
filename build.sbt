@@ -11,3 +11,6 @@ libraryDependencies ++= Seq(
   "org.scalacheck" %% "scalacheck" % "1.15.4" % Test,
 
 )
+
+// Enable Scalafmt on Compile
+scalafmtOnCompile := true
