@@ -1,5 +1,7 @@
-import munit._
-import datastructures._
+package datastructures
+
+import datastructures.*
+import munit.*
 
 class ArrayStackTest extends FunSuite {
 

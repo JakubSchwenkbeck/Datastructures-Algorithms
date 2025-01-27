@@ -1,5 +1,7 @@
-import munit._
-import datastructures._
+package datastructures
+
+import datastructures.*
+import munit.*
 
 class ArrayQueueTest extends FunSuite {
 
@@ -62,7 +64,7 @@ class ArrayQueueTest extends FunSuite {
     assertEquals(queue.size, 2)
   }
 }
-import munit._
+import munit.*
 
 class QueueTest extends FunSuite {
 
