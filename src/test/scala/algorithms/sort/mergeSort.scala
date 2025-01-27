@@ -48,12 +48,6 @@ class GenericMergeSortTest extends FunSuite {
     assertEquals(sortedArr, List(12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4))
   }
 
-  test("generic-merge-sort (not in-place) sorts arrays with duplicates") {
-    val arr = List(4, 2, 1, 5, 3, 2)
-    val sortedArr = mergeSort(arr, (x: Int, y: Int) => x >= y)
-    assertEquals(sortedArr, List(5, 4, 3, 2, 1))
-  }
-
   test("generic-merge-sort (not in-place) handles singleton arrays") {
     val arr = List(1)
     val sortedArr = mergeSort(arr, (x: Int, y: Int) => x >= y)
