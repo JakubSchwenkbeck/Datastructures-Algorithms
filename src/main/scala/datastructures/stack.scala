@@ -62,11 +62,11 @@ class ArrayStack[T](capacity: Int) extends StackTrait[T] {
 /// stack.isEmpty   // Returns false
 /// All operations (push, pop, peek, isEmpty) are O(1) time complexity.
 class Stack[T] extends StackTrait[T] {
-  private var top: Option[Node[T]] = None
+  private var top: Option[LinkedNode[T]] = None
 
   // Push an item onto the stack
   def push(item: T): Unit = {
-    val newNode = new Node(item, top)
+    val newNode = new LinkedNode(item, top)
     top = Some(newNode)
   }
 

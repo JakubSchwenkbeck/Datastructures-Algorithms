@@ -69,13 +69,13 @@ class ArrayQueue[T](capacity: Int) extends QueueTrait[T] {
 /// queue.isEmpty      // Returns false
 /// All operations (enqueue, dequeue, peek, isEmpty, size) are O(1) time complexity.
 class Queue[T] extends QueueTrait[T] {
-  private var front: Option[Node[T]] = None
-  private var rear: Option[Node[T]] = None
+  private var front: Option[LinkedNode[T]] = None
+  private var rear: Option[LinkedNode[T]] = None
   private var count: Int = 0
 
   // Enqueue an item into the queue
   def enqueue(item: T): Unit = {
-    val newNode = new Node(item)
+    val newNode = new LinkedNode(item)
     if (rear.isEmpty) {
       front = Some(newNode)
       rear = Some(newNode)
