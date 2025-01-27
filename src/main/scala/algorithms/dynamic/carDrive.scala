@@ -2,7 +2,6 @@ package algorithms.dynamic
 
 import algorithms.sort.mergeSort
 
-
 /// you plan a car drive from city A to city B with an E-car
 /// you have a max reach of n kilometres, and want to minimize stops at loading stations
 ///
@@ -10,11 +9,11 @@ import algorithms.sort.mergeSort
 ///
 /// Time complexity:  sorting the List dominates, which results in : O(m * log m)
 /**
-* @param n  Maximum reach of the E-car in kilometers.
-* @param d  Total road distance between city A and city B.
-* @param ls List of charging station distances from the starting point.
-* @return   A list of selected charging stations minimizing the number of stops.
-  */
+ * @param n  Maximum reach of the E-car in kilometers.
+ * @param d  Total road distance between city A and city B.
+ * @param ls List of charging station distances from the starting point.
+ * @return   A list of selected charging stations minimizing the number of stops.
+ */
 def greedyCarDrive(n: Int, d: Int, ls: List[Int]): List[Int] = {
   var currentPos: Int = 0
   var result: List[Int] = List.empty[Int]
@@ -33,12 +32,11 @@ def greedyCarDrive(n: Int, d: Int, ls: List[Int]): List[Int] = {
   result
 }
 
-object Main extends App {
-  private val maxReach = 10
-  private val distance = 25
-  private val stations = List(3, 7, 12, 18, 22)
+@main def carDriveMain(): Unit = {
+  val maxReach = 10
+  val distance = 25
+  val stations = List(3, 7, 12, 18, 22)
 
-  private val stops = greedyCarDrive(maxReach, distance, stations)
+  val stops = greedyCarDrive(maxReach, distance, stations)
   println(s"Charging stops: $stops")
 }
-
