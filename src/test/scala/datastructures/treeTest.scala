@@ -1,5 +1,6 @@
 package datastructures
 
+import datastructures.tree.{TreeNode, TreeUtils}
 import munit.FunSuite
 
 class TreeTest extends FunSuite {

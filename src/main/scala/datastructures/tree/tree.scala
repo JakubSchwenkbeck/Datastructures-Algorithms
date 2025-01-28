@@ -1,4 +1,7 @@
-package datastructures
+package datastructures.tree
+import datastructures.tree.{TreeNode, TreeUtils}
+
+import scala.annotation.tailrec
 
 // Define the TreeNode class
 class TreeNode[T](val value: T, var parent: Option[TreeNode[T]] = None) {
@@ -38,6 +41,7 @@ class TreeNode[T](val value: T, var parent: Option[TreeNode[T]] = None) {
 // Tree utilities object
 object TreeUtils {
   // Find the root of the tree
+  @tailrec
   def findRoot[T](node: TreeNode[T]): TreeNode[T] = {
     node.parent match {
       case Some(parent) => findRoot(parent)
