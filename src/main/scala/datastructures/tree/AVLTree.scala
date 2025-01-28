@@ -2,9 +2,9 @@ package datastructures.tree
 
 case class avlTree[T](
   key: T,
-  val left: Option[avlTree[T]] = None,
-  val right: Option[avlTree[T]] = None,
-  val parent: Option[avlTree[T]] = None
+  left: Option[avlTree[T]] = None,
+  right: Option[avlTree[T]] = None,
+  parent: Option[avlTree[T]] = None
 )
 
 def isSearchTree[T](avl: avlTree[T]): Boolean = {

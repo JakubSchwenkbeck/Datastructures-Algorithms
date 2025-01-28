@@ -1,7 +1,16 @@
 package algorithms.dynamic
 
-// top down :
-
+// Top-Down Recursive Fibonacci with Memoization
+/// This function calculates the nth Fibonacci number using recursion and memoization.
+/// It stores computed Fibonacci numbers in an array `A` to avoid redundant calculations (memorization).
+/// Base cases are handled directly: fib(0) = 1, fib(1) = 1.
+/// For other cases, it recursively computes the Fibonacci number and stores it in `A` for reuse.
+///
+/// Example:
+/// val (fib5, _) = recFibonacci(5)
+/// println(fib5) // 5
+///
+/// Time complexity: O(n) due to memoization (avoids recomputation).
 def recFibonacci(n: Int): (Int, Array[Int]) = {
   val A: Array[Int] = Array.fill(n + 1)(0)
   def recHelper(c: Int): Int = {
@@ -16,8 +25,16 @@ def recFibonacci(n: Int): (Int, Array[Int]) = {
   (recHelper(n), A)
 }
 
-// bottom up
-
+// Bottom-Up Dynamic Programming Fibonacci
+/// This function calculates the nth Fibonacci number using bottom-up dynamic programming.
+/// It iteratively computes Fibonacci numbers starting from the base cases and stores them in an array `A`.
+/// The result for each Fibonacci number is directly built up, avoiding recursion.
+///
+/// Example:
+/// val (fib5, _) = DPFibonacci(5)
+/// println(fib5) // 5
+///
+/// Time complexity: O(n) due to the iterative approach (no recursion).
 def DPFibonacci(n: Int): (Int, Array[Int]) = {
   val A: Array[Int] = Array.fill(n + 1)(0)
   A(0) = 1
