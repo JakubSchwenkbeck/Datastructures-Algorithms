@@ -1,6 +1,7 @@
 package datastructures
 
 import datastructures.*
+import datastructures.basic.{ArrayStack, Stack}
 import munit.*
 
 class ArrayStackTest extends FunSuite {

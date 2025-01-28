@@ -1,4 +1,7 @@
-package datastructures
+package datastructures.basic
+
+import datastructures.basic.QueueTrait
+import datastructures.basic.LinkedNode
 
 // Queue trait: defines basic operations for a queue
 trait QueueTrait[T] {

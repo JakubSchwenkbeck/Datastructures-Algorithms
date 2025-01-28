@@ -1,6 +1,7 @@
 package datastructures
 
 import datastructures.*
+import datastructures.basic.{ArrayQueue, Queue}
 import munit.*
 
 class ArrayQueueTest extends FunSuite {

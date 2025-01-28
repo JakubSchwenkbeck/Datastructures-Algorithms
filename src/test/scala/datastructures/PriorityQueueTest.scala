@@ -1,7 +1,7 @@
 package datastructures
 
+import datastructures.basic.PriorityQueue
 import munit._
-import datastructures.PriorityQueue
 
 class PriorityQueueTest extends FunSuite {
 

@@ -1,4 +1,7 @@
-package datastructures
+package datastructures.basic
+
+import datastructures.basic.StackTrait
+import datastructures.basic.LinkedNode
 
 // Stack trait: defines basic operations for a stack
 trait StackTrait[T] {

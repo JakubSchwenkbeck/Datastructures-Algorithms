@@ -21,6 +21,8 @@ def bubbleSort(arr: Array[Int]): Unit = {
     }
   }
 }
+
+// !! still in place but with return
 def returnBubbleSort(arr: Array[Int]): Array[Int] = {
   require(arr != null, "Input array must not be null") // Ensure valid input
   val n = arr.length
