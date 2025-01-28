@@ -6,7 +6,7 @@ package algorithms.sort
 /// val Arr = [ 1 , 5 , 4 , 2 , 3 ]
 /// val result = quickSort(Arr, (x : Int, y : Int) => x > y )
 /// println(result) // Returns [ 5 , 4 , 3 , 2 ,1]
-/// Selection sort runs in O(log n)
+/// Selection sort runs in O(nlog n)
 def quickSort[A](lst: List[A], cmp: (A, A) => Boolean): List[A] = {
   if (lst.length <= 1) lst // Base case: return if one or zero elements
   else {
