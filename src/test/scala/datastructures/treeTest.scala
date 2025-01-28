@@ -63,7 +63,7 @@ class TreeTest extends FunSuite {
 
     // This is a simple way to visually check if the output is correct
     // By running this test, you'll verify the print format
-    root.printTree()
+    // root.printTree()
     // Expected printed output:
     // Root
     //   Child 1
