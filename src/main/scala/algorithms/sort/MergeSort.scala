@@ -5,7 +5,7 @@ package algorithms.sort
 /// val Arr = [ 1 , 5 , 4 , 2 , 3 ]
 /// val result = mergeSort(Arr)
 /// println(result) // Returns [ 1 , 2 , 3 , 4 , 5 ]
-/// Selection sort runs in O(log n)
+/// merge sort runs in O(nlog n)
 def mergeSort(lst: List[Int]): List[Int] = {
   mergeSort(lst, (x: Int, y: Int) => x <= y)
 }
@@ -16,7 +16,7 @@ def mergeSort(lst: List[Int]): List[Int] = {
 /// val Arr = [ 1 , 5 , 4 , 2 , 3 ]
 /// val result = mergeSort(Arr, (x : Int, y : Int) => x > y )
 /// println(result) // Returns [ 5 , 4 , 3 , 2 ,1]
-/// Selection sort runs in O(log n)
+/// merge sort runs in O(nlog n)
 def mergeSort[A](lst: List[A], cmp: (A, A) => Boolean): List[A] = {
   def merge(ls1: List[A], ls2: List[A]): List[A] = {
     val k = ls2.length
