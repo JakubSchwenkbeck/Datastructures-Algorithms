@@ -21,3 +21,18 @@ def bubbleSort(arr: Array[Int]): Unit = {
     }
   }
 }
+def returnBubbleSort(arr: Array[Int]): Array[Int] = {
+  require(arr != null, "Input array must not be null") // Ensure valid input
+  val n = arr.length
+
+  for (i <- 0 until n - 1) { // Iterate through array passes
+    for (j <- 1 until (n - i)) { // BubbleSort up the largest element in each pass
+      if (arr(j) < arr(j - 1)) { // Swap if elements are out of order
+        val temp = arr(j)
+        arr(j) = arr(j - 1)
+        arr(j - 1) = temp
+      }
+    }
+  }
+  arr
+}

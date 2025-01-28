@@ -14,3 +14,5 @@ libraryDependencies ++= Seq(
 
 // Enable Scalafmt on Compile
 scalafmtOnCompile := true
+
+enablePlugins(JmhPlugin)
