@@ -53,6 +53,27 @@ class MinHeap[T](implicit ord: Ordering[T]) {
     Some(min)
   }
 
+  def buildHeap(elements: Array[T]): Unit = {
+    heap.clear()
+    heap.appendAll(elements)
+    for (i <- (heap.size / 2 - 1) to 0 by -1) {
+      heapifyDown(i)
+    }
+  }
+
+  def increaseKey(index: Int, newValue: T): Unit = {
+    if (ord.gt(newValue, heap(index))) {
+      heap(index) = newValue
+      heapifyDown(index)
+    }
+  }
+
+  def decreaseKey(index: Int, newValue: T): Unit = {
+    if (ord.lt(newValue, heap(index))) {
+      heap(index) = newValue
+      heapifyUp(index)
+    }
+  }
   def peekMin(): Option[T] = heap.headOption
 
   def size: Int = heap.size
