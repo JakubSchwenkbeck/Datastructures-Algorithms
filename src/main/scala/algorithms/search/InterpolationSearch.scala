@@ -1,5 +1,13 @@
 package algorithms.search
 
+/// Interpolation Search Algorithm
+/// This search technique is an improvement over binary search for uniformly distributed data.
+/// It estimates the position of the target element using a linear interpolation formula.
+/// Runs in O(log log n) for uniformly distributed data and O(n) in the worst case.
+/// Example:
+/// val Arr = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+/// val index = interpolationSearch(Arr, 7)
+/// println(index) // Returns 6 (0-based index)
 def interpolationSearch(Arr: Array[Int], a: Int): Int = {
   val n = Arr.length
   if (n == 0) return -1 // Handle empty array case
