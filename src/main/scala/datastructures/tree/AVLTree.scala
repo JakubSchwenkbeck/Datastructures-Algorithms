@@ -1,3 +1,14 @@
+package datastructures.tree
+/// AVL Tree implementation with balancing on insertions.
+///
+/// Basic Operations:
+///   - `search(value)`: O(log n) – Finds a node with the given value.
+///   - `insert(newKey)`: O(log n) – Inserts a new key and balances the tree.
+///   - Balancing after insertions ensures that the tree remains balanced with height at most O(log n).
+///
+/// Rotations:
+///   - Right and Left Rotations: O(1) – Performed during rebalancing.
+
 case class AVLTree[T](key: T, left: Option[AVLTree[T]] = None, right: Option[AVLTree[T]] = None, height: Int = 1) {
 
   // Get the height of the tree or subtree

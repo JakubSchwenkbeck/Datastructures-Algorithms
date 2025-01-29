@@ -2,6 +2,14 @@ package datastructures.heap
 
 import scala.collection.mutable.ArrayBuffer
 
+/// A max-heap implementation. Supports insert, extractMax, peekMax, and heap size operations.
+///
+/// Time Complexity:
+/// - Insert: O(log n)
+/// - ExtractMax: O(log n)
+/// - PeekMax: O(1)
+/// - Size: O(1)
+/// - IsEmpty: O(1)
 class MaxHeap[T](implicit ord: Ordering[T]) {
   private val heap: ArrayBuffer[T] = ArrayBuffer.empty[T]
 

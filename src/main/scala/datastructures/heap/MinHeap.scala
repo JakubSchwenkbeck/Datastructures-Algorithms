@@ -2,6 +2,17 @@ package datastructures.heap
 
 import scala.collection.mutable.ArrayBuffer
 
+/// A min-heap implementation. Supports insert, extractMin, peekMin, key modifications, and heap-building operations.
+///
+/// Time Complexity:
+/// - Insert: O(log n)
+/// - ExtractMin: O(log n)
+/// - PeekMin: O(1)
+/// - BuildHeap: O(n)
+/// - IncreaseKey: O(log n)
+/// - DecreaseKey: O(log n)
+/// - Size: O(1)
+/// - IsEmpty: O(1)
 class MinHeap[T](implicit ord: Ordering[T]) {
   private val heap: ArrayBuffer[T] = ArrayBuffer.empty[T]
 

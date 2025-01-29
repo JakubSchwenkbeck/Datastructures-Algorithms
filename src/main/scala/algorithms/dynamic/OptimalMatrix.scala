@@ -2,6 +2,15 @@ package algorithms.dynamic
 
 case class Matrix(n: Int, m: Int)
 
+/// Find the optimal way to parenthesize matrix chain multiplication to minimize scalar multiplications.
+/// The function returns the minimal number of scalar multiplications and the DP table for matrix splits.
+///
+/// Example:
+/// val matrices = Array(Matrix(5, 10), Matrix(10, 3), Matrix(3, 12))
+/// val (num, res) = optimalMatrixParentheses(matrices)
+/// println(s"Minimal scalar multiplications: $num")  // Returns 330
+///
+/// Time Complexity: O(n³) – Triple nested loop for DP table computation.
 def optimalMatrixParentheses(lst: Array[Matrix]): (Int, Array[Array[Int]]) = {
   val length = lst.length
   val dp: Array[Array[Int]] = Array.fill(length, length)(0)

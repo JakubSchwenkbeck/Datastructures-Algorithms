@@ -2,6 +2,14 @@ package datastructures.basic
 
 import datastructures.heap.MaxHeap
 
+/// A priority queue implemented using a max-heap. Supports enqueue, dequeue, peek, size, and isEmpty operations.
+///
+/// Time Complexity:
+/// - Enqueue (insert): O(log n)
+/// - Dequeue (extractMax): O(log n)
+/// - Peek (peekMax): O(1)
+/// - isEmpty: O(1)
+/// - Size: O(1)
 class PriorityQueue[T](implicit ord: Ordering[T]) {
   private val maxHeap = new MaxHeap[T]()
 

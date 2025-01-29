@@ -1,5 +1,15 @@
 package algorithms.dynamic
 
+/// Calculate the maximum weight sum of non-adjacent elements in an array.
+/// The function also returns the subsequence of selected elements.
+///
+/// Example:
+/// val arr = Array(3, 2, 7, 10)
+/// val (maxWeight, maxSequence) = maxNonAdjacentWeight(arr)
+/// println(s"Max weight: $maxWeight")  // Returns (13)
+/// println(s"Sequence: $maxSequence") // Returns (3, 10)
+///
+/// Time Complexity: O(n) – The DP table is filled once iteratively.
 def maxNonAdjacentWeight(a: Array[Int]): (Int, List[Int]) = {
   val n = a.length
   if (n == 0) return (0, List())

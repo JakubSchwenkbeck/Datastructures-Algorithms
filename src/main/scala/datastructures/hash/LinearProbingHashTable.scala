@@ -2,6 +2,14 @@ package datastructures.hash
 
 import scala.collection.mutable.ArrayBuffer
 
+/// A hash table implementation using linear probing for collision resolution.
+///
+/// Time Complexity:
+/// - Insert: O(1) average, O(n) worst-case (when resizing)
+/// - Get: O(1) average, O(n) worst-case (due to probing)
+/// - Remove: O(1) average, O(n) worst-case (due to probing)
+/// - Contains: O(1) average, O(n) worst-case (due to probing)
+/// - Resize: O(n) when triggered
 class LinearProbingHashTable[K, V](initialSize: Int = 16) {
   private var size = 0
   private var table: ArrayBuffer[Option[(K, V)]] = ArrayBuffer.fill(initialSize)(None)

@@ -1,3 +1,17 @@
+package datastructures.tree
+
+/// B-Tree implementation with automatic balancing during insertion.
+///
+/// Basic Operations:
+///   - `search(value)`: O(log n) – Searches for the key in the tree.
+///   - `insert(newKey)`: O(log n) – Inserts a new key and ensures the tree remains balanced.
+///
+/// Insertion:
+///   - The tree splits when a node exceeds the maximum number of keys (`maxKeys`), ensuring balanced growth. Each insertion triggers O(log n) rebalancing and potential splits.
+///
+/// Node Splitting:
+///   - When a node exceeds the max number of keys, it splits into two, promoting the middle key to the parent. Splitting happens in O(log n) time.
+
 case class BTree[T: Ordering](keys: List[T] = List(), children: List[BTree[T]] = List(), maxKeys: Int = 2) {
 
   def isLeaf: Boolean = children.isEmpty

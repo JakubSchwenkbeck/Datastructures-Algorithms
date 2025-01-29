@@ -2,6 +2,17 @@ package algorithms.dynamic
 
 case class Result(route: List[Int], minCost: Int)
 
+/// Find the optimal set of stops along a route to minimize the penalty for deviating from 200km/day driving distance.
+/// The penalty is based on the square of the difference between the ideal 200km and the actual distance driven each day.
+/// The function returns the optimal stops and the minimum penalty cost.
+///
+/// Example:
+/// val hotels = Array(0, 100, 250, 400, 600, 800)
+/// val result = findOptimalStops(hotels)
+/// println(s"Optimal stops: ${result.route}")  // [0, 250, 400,600, 800]
+/// println(s"Minimum penalty: ${result.minCost}")  // Minimum penalty : 500
+///
+/// Time Complexity: O(n²) – Nested loops for dynamic programming.
 def findOptimalStops(a: Array[Int]): Result = {
   val n = a.length
   val dp = Array.fill(n)(Int.MaxValue) // Minimum penalty cost up to hotel i
