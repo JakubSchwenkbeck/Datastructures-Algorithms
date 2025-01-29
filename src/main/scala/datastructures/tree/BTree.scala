@@ -4,9 +4,9 @@ case class BTree[T: Ordering](keys: List[T] = List(), children: List[BTree[T]] =
 
   def search(value: T): Boolean = {
     keys match {
-      case Nil => false
+      case Nil                      => false
       case ks if ks.contains(value) => true
-      case ks if isLeaf => false
+      case ks if isLeaf             => false
       case ks =>
         val (left, right) = ks.span(implicitly[Ordering[T]].lt(_, value))
         children(left.length).search(value)
@@ -17,7 +17,7 @@ case class BTree[T: Ordering](keys: List[T] = List(), children: List[BTree[T]] =
     val (newRoot, maybeSplit) = insertInternal(newKey)
     maybeSplit match {
       case Some((median, rightNode)) => BTree(List(median), List(newRoot, rightNode), maxKeys)
-      case None => newRoot
+      case None                      => newRoot
     }
   }
 
@@ -34,7 +34,8 @@ case class BTree[T: Ordering](keys: List[T] = List(), children: List[BTree[T]] =
       maybeSplit match {
         case Some((median, rightNode)) =>
           val newKeys = (left :+ median) ++ right
-          val newChildrenWithSplit = (newChildren.take(left.length + 1) :+ rightNode) ++ newChildren.drop(left.length + 1)
+          val newChildrenWithSplit =
+            (newChildren.take(left.length + 1) :+ rightNode) ++ newChildren.drop(left.length + 1)
           splitIfNeeded(BTree(newKeys, newChildrenWithSplit, maxKeys))
         case None => (BTree(keys, newChildren, maxKeys), None)
       }

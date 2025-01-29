@@ -36,9 +36,9 @@ case class AVLTree[T](key: T, left: Option[AVLTree[T]] = None, right: Option[AVL
   }
 
   private def createUpdatedNode(
-                                 newLeft: Option[AVLTree[T]],
-                                 newRight: Option[AVLTree[T]]
-                               ): AVLTree[T] = {
+    newLeft: Option[AVLTree[T]],
+    newRight: Option[AVLTree[T]]
+  ): AVLTree[T] = {
     val newHeight = 1 + Math.max(
       newLeft.map(_.height).getOrElse(0),
       newRight.map(_.height).getOrElse(0)
@@ -67,13 +67,13 @@ case class AVLTree[T](key: T, left: Option[AVLTree[T]] = None, right: Option[AVL
 
   private def rightRotate()(implicit ord: Ordering[T]): AVLTree[T] = {
     val pivot = left.get
-    val newRight =  AVLTree(
+    val newRight = AVLTree(
       key = key,
       left = pivot.right,
       right = right,
       height = 1 + Math.max(pivot.getHeightOfRight, getHeightOfRight)
     )
-     AVLTree(
+    AVLTree(
       key = pivot.key,
       left = pivot.left,
       right = Some(newRight),
@@ -83,13 +83,13 @@ case class AVLTree[T](key: T, left: Option[AVLTree[T]] = None, right: Option[AVL
 
   private def leftRotate()(implicit ord: Ordering[T]): AVLTree[T] = {
     val pivot = right.get
-    val newLeft =  AVLTree(
+    val newLeft = AVLTree(
       key = key,
       left = left,
       right = pivot.left,
       height = 1 + Math.max(getHeightOfLeft, pivot.getHeightOfLeft)
     )
-     AVLTree(
+    AVLTree(
       key = pivot.key,
       left = Some(newLeft),
       right = pivot.right,
