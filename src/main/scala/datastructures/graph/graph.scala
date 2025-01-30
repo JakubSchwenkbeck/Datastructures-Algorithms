@@ -5,8 +5,8 @@ import scala.collection.mutable
 case class Edge[T](src: T, dest: T, weight: Double)
 
 class Graph[T](val isDirected: Boolean) {
-  private val adjacencyList: mutable.Map[T, mutable.ListBuffer[(T, Double)]] = mutable.Map()
-  private val edges: mutable.ListBuffer[Edge[T]] = mutable.ListBuffer()
+  val adjacencyList: mutable.Map[T, mutable.ListBuffer[(T, Double)]] = mutable.Map()
+  val edges: mutable.ListBuffer[Edge[T]] = mutable.ListBuffer()
 
   def addVertex(vertex: T): Unit = {
     adjacencyList.getOrElseUpdate(vertex, mutable.ListBuffer())
