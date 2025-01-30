@@ -9,7 +9,7 @@ import scala.collection.mutable
 /// Uses a priority queue-based approach
 /// Runs in O((V + E) log V) time complexity
 
-def dijkstra[T](graph: Graph[T], start: T): Unit = {
+def dijkstra[T](graph: Graph[T], start: T): Map[T, Int] = {
   val distances = mutable.Map[T, Int]().withDefaultValue(Int.MaxValue)
   val visited = mutable.Set[T]()
   val priorityQueue = PriorityQueue[(T, Int)]()(Ordering.by(-_._2))
