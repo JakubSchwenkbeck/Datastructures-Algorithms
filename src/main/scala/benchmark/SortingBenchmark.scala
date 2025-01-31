@@ -1,29 +1,24 @@
-/*
 package benchmark
 
-import algorithms.sort.returnBubbleSort
-import algorithms.sort.heapSort
-
-import org.openjdk.jmh.annotations.*
+import algorithms.sort.*
+import org.openjdk.jmh.annotations._
 
 import java.util.concurrent.TimeUnit
-import scala.collection.mutable
 import scala.util.Random
 
-// sbt jmh / run -i 5 -wi 2 -f1 -t1
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
-@Warmup(iterations = 2)   // Reduce warm-up iterations (default is 5)
-@Measurement(iterations = 5) // Reduce total benchmark iterations (default is 10)
-@Fork(1) // Reduce forks (default is 3)
+@Warmup(iterations = 2)
+@Measurement(iterations = 5)
+@Fork(1)
 class SortingBenchmark {
 
-  var data: Array[Int] = new Array[Int](5000)
+  var data: Array[Int] = new Array[Int](500) // Smaller dataset for quick benchmarking
 
-  @Setup(Level.Iteration) // Runs before each benchmark iteration
+  @Setup(Level.Iteration)
   def prepare(): Unit = {
-    data = Array.fill(5000)(Random.nextInt(1000000)) // Large random dataset
+    data = Array.fill(500)(Random.nextInt(500)) // Smaller random dataset
   }
 
   @Benchmark
@@ -35,5 +30,15 @@ class SortingBenchmark {
   def benchmarkHeapSort(): Array[Int] = {
     heapSort(data.clone())
   }
+
+  @Benchmark
+  def benchmarkCountingSort(): Array[Int] = {
+    countingSort(data.clone(), 500)
+  }
+
+  @Benchmark
+  def benchmarkInsertionSort(): Array[Int] = {
+    returnInsertionSort(data.clone())
+  }
+
 }
- */

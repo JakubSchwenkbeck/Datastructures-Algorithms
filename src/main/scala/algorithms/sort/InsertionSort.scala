@@ -23,6 +23,11 @@ def insertionSortInPlace(arr: Array[Int]): Unit = {
   }
 }
 
+def returnInsertionSort(arr: Array[Int]): Array[Int] = {
+  insertionSortInPlace(arr)
+  arr
+}
+
 /// Sorting an integer array by insertion, returning a new List
 /// Input is immutable (lists are immutable in scala)
 /// Example
