@@ -1,0 +1,5 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit"
+"benchmark.SortingBenchmark.benchmarkBubbleSort","avgt",1,5,0.125965,0.017152,"ms/op"
+"benchmark.SortingBenchmark.benchmarkCountingSort","avgt",1,5,0.004571,0.000333,"ms/op"
+"benchmark.SortingBenchmark.benchmarkHeapSort","avgt",1,5,0.074379,0.008178,"ms/op"
+"benchmark.SortingBenchmark.benchmarkInsertionSort","avgt",1,5,0.029439,0.005017,"ms/op"
