@@ -32,7 +32,7 @@ class JohnsonTest extends FunSuite {
   }
 
   /* Kind of not working lmao. this is caused by the Sentinel T value used
-  
+
   test("Johnson's Algorithm should detect a negative cycle") {
     val graph = new Graph[String](isDirected = true)
 
