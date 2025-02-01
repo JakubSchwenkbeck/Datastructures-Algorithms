@@ -6,6 +6,8 @@ import org.openjdk.jmh.annotations._
 import java.util.concurrent.TimeUnit
 import scala.util.Random
 
+// COMMAND : sbt "jmh:run -i 5 -wi 2 -f1 -t1 -rf csv"
+
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
