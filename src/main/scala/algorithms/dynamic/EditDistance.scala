@@ -15,10 +15,10 @@ def editDistance(X: Array[Char], Y: Array[Char]): (Array[Array[Int]], Int) = {
   for (i <- 0 until n - 1) {
     Edit(0)(i) = i
   }
-  for (i <- 0 until m - 1) {
+  for (i <- 1 until m) {
     Edit(i)(0) = i
 
-    for (j <- 0 until n - 1) {
+    for (j <- 1 until n) {
       val ins: Int = Edit(i)(j - 1) + 1
       val del: Int = Edit(i - 1)(j) + 1
       var rep: Int = Int.MaxValue
@@ -32,4 +32,15 @@ def editDistance(X: Array[Char], Y: Array[Char]): (Array[Array[Int]], Int) = {
 
   }
   (Edit, Edit(m - 1)(n - 1))
+}
+
+@main
+def editDistanceMain(): Unit = {
+  val x: Array[Char] = Array('A', 'L', 'G', 'O', 'R', 'I', 'T', 'H', 'M')
+  val y: Array[Char] = Array('A', 'L', 'T', 'R', 'U', 'I', 'S', 'T', 'I', 'C')
+
+  val (mat, res) = editDistance(x, y)
+  mat.foreach(row => println(row.mkString(" ")))
+  println(s" The shortest edit distance is : $res ")
+
 }
