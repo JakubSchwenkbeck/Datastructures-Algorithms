@@ -240,3 +240,5 @@ project/metals.sbt
 project/project
 
 **/.DS_Store
+
+src/main/scala/benchmark
