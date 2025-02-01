@@ -6,7 +6,7 @@ package algorithms.sort
 /// Example:
 /// val Arr = Array(170, 45, 75, 90, 802, 24, 2, 66)
 /// val result = radixSort(Arr, 3)
-/// println(result.mkString(", ")) // Returns Array(2, 24, 45, 66, 75, 90, 170, 802)
+/// println(result) // Returns Array(2, 24, 45, 66, 75, 90, 170, 802)
 
 def radixSort(A: Array[Int], d: Int): Array[Int] = {
   var output = A.clone()
