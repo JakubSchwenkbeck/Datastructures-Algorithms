@@ -1,5 +1,0 @@
-[info] Benchmark                                Mode  Cnt  Score    Error  Units
-[info] SortingBenchmark.benchmarkBubbleSort     avgt    5  0.129 ±  0.020  ms/op
-[info] SortingBenchmark.benchmarkCountingSort   avgt    5  0.004 ±  0.001  ms/op
-[info] SortingBenchmark.benchmarkHeapSort       avgt    5  0.068 ±  0.003  ms/op
-[info] SortingBenchmark.benchmarkInsertionSort  avgt    5  0.029 ±  0.002  ms/op
