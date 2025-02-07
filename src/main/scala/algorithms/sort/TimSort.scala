@@ -12,13 +12,13 @@ def timSort(arr: Array[Int], k: Int = 64): Unit = {
 
   val n = arr.length
 
-  // Step 1: Sort small chunks with Insertion Sort
+  // Sort small chunks with Insertion Sort
   for (i <- 0 until n by k) {
     val end = Math.min(i + k, n)
-    insertionSortInPlace(arr, i, end)
+    subArrayInsertionSort(arr, i, end)
   }
 
-  // Step 2: Merge sorted chunks with Merge Sort
+  // Merge sorted chunks with Merge Sort
   var size = k
   while (size < n) {
     for (left <- 0 until n by 2 * size) {
@@ -32,7 +32,7 @@ def timSort(arr: Array[Int], k: Int = 64): Unit = {
 }
 
 // Helper function: Insertion Sort for a subarray
-private def insertionSortInPlace(arr: Array[Int], start: Int, end: Int): Unit = {
+private def subArrayInsertionSort(arr: Array[Int], start: Int, end: Int): Unit = {
   for (i <- start + 1 until end) {
     val key = arr(i)
     var j = i - 1
