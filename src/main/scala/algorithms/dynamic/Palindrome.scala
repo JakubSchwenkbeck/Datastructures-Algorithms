@@ -43,7 +43,7 @@ def longestPalindromicSubsequence(s: String): (Int, Array[Array[Int]]) = {
 
 @main
 def mainLongestPalindromicSubsequence(): Unit = {
-  val inputString: String = "character"
+  val inputString: String = "annCHARnna"
   val (lpsLength, dpMatrix) = longestPalindromicSubsequence(inputString)
   println(s"Longest Palindromic Subsequence length for '$inputString' is: $lpsLength")
   println("DP Matrix:")
