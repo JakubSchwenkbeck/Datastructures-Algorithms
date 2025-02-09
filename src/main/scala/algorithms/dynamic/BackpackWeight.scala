@@ -11,7 +11,7 @@ package algorithms.dynamic
 ///   - Base Case: dp(0) = true (the empty subset)
 ///   - For each item weight and for each w from W down to that weight:
 ///         if dp(w - weight) is true then dp(w) becomes true.
-///         
+///
 /// Time Complexity: O(n * W), where n is the number of items and W is the capacity.
 def maxReachableWeight(weights: Array[Int], W: Int): (Int, Array[Boolean]) = {
   // Initialize DP array: only 0 is reachable at the start.
